@@ -1,0 +1,84 @@
+import java.util.*;
+class Banking_System{
+    public static int balance=10000; // Global Declaration 
+    public static void main(String args[])
+    {
+
+    int pin,option,amount,i=0;
+                    // Fazal Ansari Roll No. 1
+    System.out.println("\t\tWelcome To ATM");
+    while( i<100)
+    {
+    System.out.print("  Pin:");
+    Scanner s= new Scanner(System.in);
+    pin = s.nextInt();
+
+    if(pin==9211)
+    {
+        System.out.println("\t Press : 1 to Deposit \t 2 to Withdraw \t 3 to Check Balance \t 4 to Exit");
+        option = s .nextInt();
+
+        switch(option)
+        {
+            case 1 : 
+            {
+                System.out.print("Enter Amount to Deposit :");
+                amount=s .nextInt();
+                Deposit(amount);
+                // Fazal Ansari Roll No. 1
+                break;
+            }
+            case 2:
+            {
+                System.out.print("Enter Amount to Withraw :");
+                amount=s .nextInt();
+                Withdraw(amount);
+                break;
+            }
+            case 3:
+            {
+                ShowDetails();
+                break;
+                                // Fazal Ansari Roll No. 1
+            } 
+            case 4:
+            {
+                System.out.print("\t !! Thanks For Visit !!");
+                System.exit(0);
+                break;
+            }
+            default:
+            {
+                System.out.println(" !! Invalid Operation !!");
+            }
+        }    
+                       // Fazal Ansari Roll No. 1
+
+    }
+    else
+    {
+        System.out.println("  !! Wrong Pin !!");
+    }
+    i++;
+    }
+
+    }
+    public static void Deposit(int amount)
+    {
+         balance+=amount;
+        System.out.println("\tBalance:"+balance);
+        
+    }
+    public static void Withdraw(int amount)
+    {
+        balance-=amount;
+        System.out.println("\tBalance:"+balance);
+                // Fazal Ansari Roll No. 1
+
+    }
+    public static void ShowDetails()
+    {
+        System.out.println("\tBalance:"+balance);
+
+    }
+}
